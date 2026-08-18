@@ -366,12 +366,11 @@ export default function Certifications() {
         />
 
         {/* =====================================================
-            TABS
-          ===================================================== */}
+              TABS — LIQUID GLASS
+            ===================================================== */}
 
         <Reveal>
           <div className="mt-10 md:mt-12">
-            {/* Horizontal scroll area */}
             <div
               ref={tabsRef}
               className="w-full overflow-x-auto scrollbar-hide"
@@ -379,27 +378,31 @@ export default function Certifications() {
                 scrollbarWidth: "none",
               }}
             >
-              {/* Tabs container
-          IMPORTANT:
-          - w-max = mengikuti total lebar seluruh tab
-          - min-w-full = minimal selebar container
-          - tidak menggunakan grid
-      */}
               <div
                 className="
           inline-flex
           w-max
           min-w-full
-          p-1
-          rounded-xl
+          p-1.5
+          rounded-2xl
           border
+          backdrop-blur-xl
         "
                 style={{
-                  backgroundColor: "var(--color-surface)",
-                  borderColor: "var(--color-border)",
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03))",
+                  borderColor: "rgba(255,255,255,0.14)",
+                  boxShadow:
+                    "0 8px 32px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.12)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  backdropFilter: "blur(20px)",
                 }}
               >
-                {/* Certification Tabs */}
+
+                {/* =========================
+                      CERTIFICATION TABS
+                    ========================= */}
+
                 {certificationGroups.map((group, index) => {
                   const isActive = activeTab === index;
 
@@ -409,40 +412,116 @@ export default function Certifications() {
                       type="button"
                       onClick={() => setActiveTab(index)}
                       className="
+                group
                 relative
                 shrink-0
                 inline-flex
                 items-center
                 justify-center
-                gap-2
                 px-4
                 md:px-5
                 py-2.5
-                rounded-lg
+                rounded-xl
                 font-mono
                 text-[10px]
                 md:text-xs
                 uppercase
                 tracking-[0.08em]
                 whitespace-nowrap
+                overflow-hidden
                 transition-all
-                duration-200
+                duration-300
+                ease-out
+                hover:-translate-y-0.5
+                hover:scale-[1.02]
+                cursor-pointer
               "
                       style={{
-                        backgroundColor: isActive
-                          ? "var(--color-card-bg)"
+                        background: isActive
+                          ? "linear-gradient(135deg, rgba(255,255,255,0.20), rgba(255,255,255,0.07))"
                           : "transparent",
 
                         color: isActive
                           ? "var(--color-text-primary)"
                           : "var(--color-text-muted)",
 
+                        border: isActive
+                          ? "1px solid rgba(255,255,255,0.16)"
+                          : "1px solid transparent",
+
                         boxShadow: isActive
-                          ? "0 1px 3px rgba(0,0,0,0.08)"
+                          ? `
+                    0 4px 16px rgba(0,0,0,0.08),
+                    inset 0 1px 0 rgba(255,255,255,0.18),
+                    inset 0 -1px 0 rgba(255,255,255,0.04)
+                  `
                           : "none",
+
+                        backdropFilter: isActive
+                          ? "blur(16px)"
+                          : "blur(0px)",
+
+                        WebkitBackdropFilter: isActive
+                          ? "blur(16px)"
+                          : "blur(0px)",
                       }}
                     >
-                      <span className="flex flex-col items-center leading-tight text-center">
+
+                      {/* =========================
+                            HOVER GLASS
+                          ========================= */}
+
+                      {!isActive && (
+                        <span
+                          className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    rounded-xl
+                    opacity-0
+                    transition-all
+                    duration-300
+                    group-hover:opacity-100
+                  "
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03))",
+                            border:
+                              "1px solid rgba(255,255,255,0.10)",
+                            boxShadow:
+                              "inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 14px rgba(0,0,0,0.06)",
+                            backdropFilter: "blur(12px)",
+                            WebkitBackdropFilter: "blur(12px)",
+                          }}
+                        />
+                      )}
+
+                      {/* =========================
+                            ACTIVE GLASS HIGHLIGHT
+                          ========================= */}
+
+                      {isActive && (
+                        <span
+                          className="
+                    pointer-events-none
+                    absolute
+                    inset-x-3
+                    top-0
+                    h-px
+                    rounded-full
+                  "
+                          style={{
+                            background:
+                              "linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)",
+                          }}
+                        />
+                      )}
+
+                      {/* =========================
+                            TAB TEXT
+                          ========================= */}
+
+                      <span className="relative z-10 flex flex-col items-center leading-tight text-center">
                         {splitTabLabel(group.group).map((line, index) => (
                           <span key={index}>
                             {line.join(" ")}
@@ -450,7 +529,10 @@ export default function Certifications() {
                         ))}
                       </span>
 
-                      {/* Active indicator */}
+                      {/* =========================
+                            ACTIVE INDICATOR
+                          ========================= */}
+
                       {isActive && (
                         <span
                           className="
@@ -464,6 +546,8 @@ export default function Certifications() {
                   "
                           style={{
                             backgroundColor: "var(--color-primary)",
+                            boxShadow:
+                              "0 0 10px rgba(255,255,255,0.35)",
                           }}
                         />
                       )}
@@ -471,49 +555,120 @@ export default function Certifications() {
                   );
                 })}
 
-                {/* Achievements */}
+                {/* =========================
+                      ACHIEVEMENTS TAB
+                    ========================= */}
+
                 <button
                   type="button"
                   onClick={() =>
                     setActiveTab(certificationGroups.length)
                   }
                   className="
+            group
             relative
             shrink-0
             inline-flex
             items-center
             justify-center
-            gap-2
             px-4
             md:px-5
             py-2.5
-            rounded-lg
+            rounded-xl
             font-mono
             text-[10px]
             md:text-xs
             uppercase
             tracking-[0.08em]
             whitespace-nowrap
+            overflow-hidden
             transition-all
-            duration-200
+            duration-300
+            ease-out
+            hover:-translate-y-0.5
+            hover:scale-[1.02]
           "
                   style={{
-                    backgroundColor: isAchievementTab
-                      ? "var(--color-card-bg)"
+                    background: isAchievementTab
+                      ? "linear-gradient(135deg, rgba(255,255,255,0.20), rgba(255,255,255,0.07))"
                       : "transparent",
 
                     color: isAchievementTab
                       ? "var(--color-text-primary)"
                       : "var(--color-text-muted)",
 
+                    border: isAchievementTab
+                      ? "1px solid rgba(255,255,255,0.16)"
+                      : "1px solid transparent",
+
                     boxShadow: isAchievementTab
-                      ? "0 1px 3px rgba(0,0,0,0.08)"
+                      ? `
+                0 4px 16px rgba(0,0,0,0.08),
+                inset 0 1px 0 rgba(255,255,255,0.18),
+                inset 0 -1px 0 rgba(255,255,255,0.04)
+              `
                       : "none",
+
+                    backdropFilter: isAchievementTab
+                      ? "blur(16px)"
+                      : "blur(0px)",
+
+                    WebkitBackdropFilter: isAchievementTab
+                      ? "blur(16px)"
+                      : "blur(0px)",
                   }}
                 >
-                  Achievements
 
-                  {/* Active indicator */}
+                  {/* Hover Glass */}
+                  {!isAchievementTab && (
+                    <span
+                      className="
+                pointer-events-none
+                absolute
+                inset-0
+                rounded-xl
+                opacity-0
+                transition-all
+                duration-300
+                group-hover:opacity-100
+              "
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03))",
+                        border:
+                          "1px solid rgba(255,255,255,0.10)",
+                        boxShadow:
+                          "inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 14px rgba(0,0,0,0.06)",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                      }}
+                    />
+                  )}
+
+                  {/* Active Highlight */}
+                  {isAchievementTab && (
+                    <span
+                      className="
+                pointer-events-none
+                absolute
+                inset-x-3
+                top-0
+                h-px
+                rounded-full
+              "
+                      style={{
+                        background:
+                          "linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)",
+                      }}
+                    />
+                  )}
+
+                  {/* Text */}
+                  <span className="relative z-10">
+                    Achievements
+                  </span>
+
+                  {/* Active Indicator */}
                   {isAchievementTab && (
                     <span
                       className="
@@ -527,10 +682,13 @@ export default function Certifications() {
               "
                       style={{
                         backgroundColor: "var(--color-primary)",
+                        boxShadow:
+                          "0 0 10px rgba(255,255,255,0.35)",
                       }}
                     />
                   )}
                 </button>
+
               </div>
             </div>
           </div>
