@@ -8,7 +8,10 @@ export const profile = {
   location: "Yogyakarta, Indonesia",
   email: "garyfaldi1@gmail.com",
   phone: "+62 813-5670-5440",
-  resumeUrl: "/resume-kadek-gary-faldi.pdf",
+  resumeUrls: {
+    id: "/resume-kadek-gary-faldi-id.pdf",
+    en: "/resume-kadek-gary-faldi-en.pdf",
+  },
   about: [
     "I am an Informatics student at UPN \"Veteran\" Yogyakarta (GPA 3.61/4.00) focusing on Machine Learning, Data Science, and GIS Analytics. Most of my learning time is spent building predictive models with Python — ranging from satellite imagery classification and customer segmentations to student dropout predictions.",
     "Besides machine learning, I am also active in web development (React) and have completed the Junior Web Programmer certification from BNSP. One of my favorite projects is building a village profile website with an interactive map using Leaflet and GeoJSON — a blend of web development and GIS.",

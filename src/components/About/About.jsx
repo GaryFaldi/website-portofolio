@@ -129,8 +129,8 @@ export default function About() {
                 <div className="grid grid-cols-2 gap-3">
                   {/* GPA / Transcript */}
                   <a
-                    href="/transkrip-nilai.pdf"
-                    download="transkrip-nilai.pdf"
+                    href="/kadek_gary_faldi_transkrip-nilai.pdf"
+                    download="kadek_gary_faldi_transkrip-nilai.pdf"
                     title="Download academic transcript"
                     className="group rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2"
                     style={{
