@@ -9,7 +9,7 @@ export const profile = {
   email: "garyfaldi1@gmail.com",
   phone: "+62 813-5670-5440",
   resumeUrls: {
-    id: "/resume-kadek-gary-faldi-id.pdf",
+    id: "/resume-kadek-gary-faldi-en.pdf",
     en: "/resume-kadek-gary-faldi-en.pdf",
   },
   about: [
