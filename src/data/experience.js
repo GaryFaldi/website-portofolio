@@ -21,4 +21,17 @@ export const experience = [
       "Controlled distribution flow and logistics inventory so that all events ran without operational issues.",
     ],
   },
+  {
+    role: "SHE Data & Reporting Intern",
+    organization: "PT Chakra Jawara",
+    period: "October 2026 – Present",
+    points: [
+      "Support Safety, Health & Environment (SHE) functions through the processing, management, and analysis of operational safety data.",
+      "Perform data preparation, cleaning, and management using Microsoft Excel to support SHE reporting and monitoring activities.",
+      "Support data visualization and reporting using Microsoft Power BI to present SHE information in a structured and accessible manner.",
+      "Monitor and analyze data related to safety findings, inspections, incidents, and corrective actions to identify patterns and key insights.",
+      "Collaborate with the SHE team to understand business processes, data requirements, and reporting workflows within a heavy equipment operational environment.",
+    ],
+  },
+
 ];

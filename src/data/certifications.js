@@ -15,7 +15,8 @@ export const certificationGroups = [
         credentialId: "ASAH/GRAD/XXVI-01/M297D5Y0931",
         credentialUrl: "https://drive.google.com/open?id=15hK7OkgPPjJS3oLnrGu8DwPHYQ3Ho1Ju",
 
-        description: "Diberikan kepada Kadek Gary Faldi atas keberhasilan menyelesaikan Pelatihan Machine Learning pada Program Asah led by Dicoding in association with Accenture dengan status kelulusan Lulus Penuh.",
+        description:
+          "Awarded to Kadek Gary Faldi for successfully completing the Machine Learning Training in the Asah Program led by Dicoding in association with Accenture with full graduation status.",
         skills: ["Machine Learning", "Deep Learning", "Python", "Artificial Intelligence", "Git", "GitHub", "Programming Logic", "Software Development", "Soft Skills"],
 
         image: null,
@@ -259,7 +260,8 @@ export const certificationGroups = [
         credentialId: null,
         credentialUrl: "https://drive.google.com/open?id=1kznlVMqglcvojDjDfoFsC_d5AbuhBuMF",
 
-        description: "Rasakan Belajar Data Science secara Offline eksklusif dengan Trainer yang Handal at UPN Veteran Yogyakarta Kampus 1 Ruang Seminar FEB.",
+        description:
+          "Exclusive offline Data Science learning experience with expert trainers at UPN Veteran Yogyakarta Campus 1 FEB Seminar Room.",
         skills: [
           "Data Science",
           "Jupyter Notebook",
@@ -284,8 +286,8 @@ export const certificationGroups = [
         issued: "2025",
         expires: null,
 
-        credentialId: null,
-        credentialUrl: null,
+        credentialId: "0LZ059D43X65",
+        credentialUrl: "https://www.dicoding.com/certificates/0LZ059D43X65",
 
         description:
           "Introduction to programming fundamentals and software development using Python.",
@@ -311,8 +313,8 @@ export const certificationGroups = [
         issued: "2025",
         expires: null,
 
-        credentialId: null,
-        credentialUrl: null,
+        credentialId: "MEPJ2E3GWP3V",
+        credentialUrl: "https://www.dicoding.com/certificates/MEPJ2E3GWP3V",
 
         description:
           "Learning program covering version control fundamentals and collaborative development using Git and GitHub.",
@@ -338,8 +340,8 @@ export const certificationGroups = [
         issued: "2025",
         expires: null,
 
-        credentialId: null,
-        credentialUrl: null,
+        credentialId: "JMZVVN013ZN9",
+        credentialUrl: "https://www.dicoding.com/certificates/JMZVVN013ZN9",
 
         description:
           "Introduction to artificial intelligence concepts, applications, and fundamental AI technologies.",
@@ -365,8 +367,8 @@ export const certificationGroups = [
         issued: "2025",
         expires: null,
 
-        credentialId: null,
-        credentialUrl: null,
+        credentialId: "81P25GLEYPOY",
+        credentialUrl: "https://www.dicoding.com/certificates/81P25GLEYPOY",
 
         description:
           "Programming fundamentals designed as an introduction to software development practices.",
@@ -393,8 +395,8 @@ export const certificationGroups = [
         issued: "2025",
         expires: null,
 
-        credentialId: null,
-        credentialUrl: null,
+        credentialId: "N9ZO272LRPG5",
+        credentialUrl: "https://www.dicoding.com/certificates/N9ZO272LRPG5",
 
         description:
           "Introduction to computational thinking and fundamental programming logic.",
@@ -424,11 +426,11 @@ export const certificationGroups = [
         type: "Training",
         category: "Technology",
 
-        issued: "2022",
+        issued: "2025",
         expires: null,
 
         credentialId: null,
-        credentialUrl: null,
+        credentialUrl: "https://drive.google.com/drive/folders/1hryL9HLmtIDMHviXvHRYKAqpXrKEignH?usp=sharing",
 
         description:
           "A series of technology micro-training programs covering artificial intelligence, cybersecurity, cloud computing, computational thinking, and personal data protection.",
@@ -458,8 +460,9 @@ export const certificationGroups = [
         issued: "May 19, 2026",
         expires: null,
         credentialId: "Periode 2A",
-        credentialUrl: "",
-        description: "Sertifikat bukti penyelesaian pembekalan Kuliah Kerja Nyata (KKN) dengan perolehan rata-rata nilai sebesar 98.46.",
+        credentialUrl: "https://drive.google.com/file/d/1sZ2YA7Jy-Al8fdFfslCVLA38Uq-PgDnS/view?usp=sharing",
+        description:
+          "Certificate of completion for the Student Community Service (KKN) preparation program, achieving an average score of 98.46, while actively implementing Pancasila values and state defense (Bela Negara) principles.",
         skills: ["Community Development", "Teamwork", "Public Service", "Social Engineering"],
         image: null,
         featured: true
@@ -473,8 +476,9 @@ export const certificationGroups = [
         issued: "May 26, 2024",
         expires: null,
         credentialId: "125/A/SERTIFIKAT/RK/HIMATIF/V/2024",
-        credentialUrl: "",
-        description: "Berpartisipasi sebagai peserta dalam seminar intensif yang diselenggarakan oleh Himpunan Mahasiswa Program Studi Informatika UPN \"Veteran\" Yogyakarta bersama Berijalan.",
+        credentialUrl: "https://drive.google.com/file/d/1etEMle2Dw2tN3tF48f2YYROxnXRUKRMA/view?usp=sharing",
+        description:
+          "Participated as an attendee in an intensive seminar organized by the Informatics Student Association of UPN \"Veteran\" Yogyakarta in collaboration with Berijalan.",
         skills: ["Project Management", "Leadership", "Strategic Planning", "Communication", "Team Coordination", "Informatics"]
       },
 
@@ -486,8 +490,9 @@ export const certificationGroups = [
         issued: "2025",
         expires: null,
         credentialId: "671/HERTECH/ID/2025",
-        credentialUrl: "",
-        description: "Sertifikat penghargaan atas partisipasi dan pencapaian sebagai Pekerja Terampil dalam program yang diselenggarakan oleh HerTech.",
+        credentialUrl: "https://drive.google.com/file/d/1AzWl_MtDVQ2Xk3XRXjRxKieHg5M8LnIb/view?usp=sharing",
+        description:
+          "Certificate of appreciation for participation and achievement as a Skilled Worker in the program organized by HerTech.",
         skills: ["Technical Skills", "Professional Development"],
         image: null,
         featured: true
@@ -532,7 +537,8 @@ export const achievements = [
     expires: null,
     credentialId: "",
     credentialUrl: "https://drive.google.com/file/d/15v-ACVwUHNHOJCMCxwzxm5vWR9CLyMeI/view?usp=sharing",
-    description: "Piagam penghargaan yang diberikan atas partisipasi dalam mengikuti Kompetisi Sains Nasional (KSN) Informatika di tingkat Provinsi.",
+    description:
+      "Certificate of appreciation awarded for participating in the Provincial National Science Competition (KSN) in Informatics.",
     skills: ["Informatics", "Computer Science", "Algorithms", "Logical Analysis", "Problem Solving", "Competition"]
   },
   {
@@ -544,7 +550,8 @@ export const achievements = [
     expires: null,
     credentialId: "861/3503.SMA/DIKBUD",
     credentialUrl: "https://drive.google.com/file/d/15v-ACVwUHNHOJCMCxwzxm5vWR9CLyMeI/view?usp=sharing",
-    description: "Diberikan atas prestasi pada seleksi Olimpiade Sains Nasional Kabupaten/Kota (OSN-K) dan sebagai peserta seleksi tingkat Provinsi (OSN-P) bidang studi Informatika yang dilaksanakan secara daring.",
+    description:
+      "Awarded for achievement in the Regency/City National Science Olympiad (OSN-K) selection and as a participant in the online Provincial-level selection (OSN-P) in Informatics.",
     skills: ["Informatics", "Competitive Programming", "Problem Solving", "Logical Reasoning", "Algorithms", "Mathematics"]
   },
   {
@@ -556,7 +563,8 @@ export const achievements = [
     expires: null,
     credentialId: "",
     credentialUrl: "https://drive.google.com/file/d/15ksbX1AlYx25r4eWizfkn3ZQO9QgwUU6/view?usp=sharing",
-    description: "Penghargaan atas partisipasi aktif dalam mengikuti Seleksi Olimpiade Sains Tingkat Provinsi (OSP) Sulawesi Tengah yang diselenggarakan secara daring pada cabang Informatika.",
+    description:
+      "Award for active participation in the Central Sulawesi Provincial Science Olympiad (OSP) online selection in Informatics.",
     skills: ["Informatics", "Problem Solving", "Information Technology", "Analytical Skills", "Data Structures", "Algorithms"]
   },
 ];

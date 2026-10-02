@@ -21,7 +21,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 8);
 
-      const scrollPosition = window.scrollY + 200; // offset for better detection
+      const scrollPosition = window.scrollY + 200;
 
       if (window.scrollY < 100) {
         setActiveSection("");

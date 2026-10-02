@@ -1,6 +1,6 @@
 export const profile = {
   name: "Kadek Gary Faldi",
-  gpa: "3.61/4.00",
+  gpa: "3.63/4.00",
   shortName: "Gery",
   headline: "Informatics Student exploring Technology, Artificial Intelligence, Data, and Software Development.",
   tagline:
