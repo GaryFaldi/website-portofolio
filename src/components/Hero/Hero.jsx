@@ -85,7 +85,7 @@ export default function Hero() {
                     href={profile.resumeUrls.id}
                     download
                     onClick={() => setIsDropdownOpen(false)}
-                    className="flex items-center px-4 py-3 text-sm transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                    className="flex items-center px-4 py-3 text-sm transition-colors hover:bg-[var(--color-surface-secondary)]"
                     style={{ color: "var(--color-text-primary)" }}
                   >
                     Bahasa Indonesia
@@ -94,7 +94,7 @@ export default function Hero() {
                     href={profile.resumeUrls.en}
                     download
                     onClick={() => setIsDropdownOpen(false)}
-                    className="flex items-center px-4 py-3 text-sm transition-colors border-t hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                    className="flex items-center px-4 py-3 text-sm transition-colors border-t hover:bg-[var(--color-surface-secondary)]"
                     style={{
                       color: "var(--color-text-primary)",
                       borderColor: "var(--color-border)"
