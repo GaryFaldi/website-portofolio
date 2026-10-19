@@ -10,7 +10,7 @@ export const profile = {
   phone: "+62 813-5670-5440",
   resumeUrls: {
     id: "/resume-kadek-gary-faldi-en.pdf",
-    en: "/resume-kadek-gary-faldi-en.pdf",
+    en: "/resume-kadek-gary-faldi-id.pdf",
   },
   about: [
     "I am an Informatics student at UPN \"Veteran\" Yogyakarta (GPA 3.63/4.00) focusing on Machine Learning, Data Science, and GIS Analytics. Most of my learning time is spent building predictive models with Python — ranging from satellite imagery classification and customer segmentations to student dropout predictions.",
