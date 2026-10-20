@@ -14,7 +14,7 @@ export default function About() {
       style={{ backgroundColor: "var(--color-surface-secondary)" }}
     >
       <div className="container-page w-full">
-        {/* Section Heading */}
+        {/* Section Heading  */}
         <Reveal>
           <SectionHeading
             index="01"
