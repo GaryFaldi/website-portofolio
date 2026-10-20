@@ -7,11 +7,13 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import { achievements, certificationGroups } from "../../data/certifications";
+import { getAchievements, getCertificationGroups } from "../../data/certifications";
+import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../shared/Reveal";
 import SectionHeading from "../shared/SectionHeading";
 
 function CertificationItem({ item }) {
+  const { t } = useLanguage();
   return (
     <article
       className="group rounded-xl border p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5"
@@ -86,7 +88,7 @@ function CertificationItem({ item }) {
                   color: "var(--color-text-muted)",
                 }}
               >
-                Duration
+                {t("certifications.durationLabel", "Duration")}
               </p>
 
               <p
@@ -108,7 +110,7 @@ function CertificationItem({ item }) {
                   color: "var(--color-text-muted)",
                 }}
               >
-                Valid Until
+                {t("certifications.validUntilLabel", "Valid Until")}
               </p>
 
               <p
@@ -161,7 +163,7 @@ function CertificationItem({ item }) {
             }}
           >
             <ExternalLink size={14} />
-            View Credential
+            {t("certifications.viewCredential", "View Credential")}
           </a>
         </div>
       )}
@@ -170,6 +172,7 @@ function CertificationItem({ item }) {
 }
 
 function AchievementCard({ item }) {
+  const { t } = useLanguage();
   return (
     <article
       className="group relative rounded-2xl border p-6 md:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1"
@@ -254,7 +257,7 @@ function AchievementCard({ item }) {
               }}
             >
               <ExternalLink size={14} />
-              View Credential
+              {t("certifications.viewCredential", "View Credential")}
             </a>
           </div>
         )}
@@ -289,6 +292,10 @@ function splitTabLabel(label) {
 }
 
 export default function Certifications() {
+  const { language, t } = useLanguage();
+  const certificationGroups = getCertificationGroups(language);
+  const achievements = getAchievements(language);
+
   /*
    * Tab index:
    * 0...n = certification groups
@@ -360,9 +367,12 @@ export default function Certifications() {
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         {/* Section Heading */}
         <SectionHeading
-          eyebrow="Credentials"
-          title="Certifications & Achievements"
-          description="Professional certifications, technical training, and notable academic achievements."
+          eyebrow={t("certifications.eyebrow", "Credentials")}
+          title={t("certifications.title", "Certifications & Achievements")}
+          description={t(
+            "certifications.description",
+            "Professional certifications, technical training, and notable academic achievements."
+          )}
         />
 
         {/* =====================================================
@@ -665,7 +675,7 @@ export default function Certifications() {
 
                   {/* Text */}
                   <span className="relative z-10">
-                    Achievements
+                    {t("certifications.achievementsTab", "Achievements")}
                   </span>
 
                   {/* Active Indicator */}
@@ -774,7 +784,7 @@ export default function Certifications() {
                       color: "var(--color-text-muted)",
                     }}
                   >
-                    Key Achievements
+                    {t("certifications.keyAchievements", "Key Achievements")}
                   </h3>
 
                   <div

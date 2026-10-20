@@ -1,3 +1,4 @@
+import { LanguageProvider } from "./context/LanguageContext";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -11,20 +12,22 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div style={{ backgroundColor: "var(--color-background)" }}>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <EducationTraining />
-        <Projects />
-        <Certifications />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div style={{ backgroundColor: "var(--color-background)" }}>
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <EducationTraining />
+          <Projects />
+          <Certifications />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

@@ -1,9 +1,12 @@
-import { projects } from "../../data/projects";
+import { getProjects } from "../../data/projects";
+import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../shared/Reveal";
 import SectionHeading from "../shared/SectionHeading";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
+  const { language, t } = useLanguage();
+  const projects = getProjects(language);
   const featured = projects.filter((p) => p.featured);
   const other = projects.filter((p) => !p.featured);
 
@@ -18,8 +21,8 @@ export default function Projects() {
         <Reveal>
           <SectionHeading
             index="04"
-            eyebrow="Selected Work"
-            title="Projects"
+            eyebrow={t("projects.eyebrow")}
+            title={t("projects.title")}
           />
         </Reveal>
 
@@ -41,7 +44,7 @@ export default function Projects() {
                   className="font-mono text-xs uppercase tracking-[0.18em]"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  Other Projects
+                  {t("projects.otherProjects")}
                 </h3>
 
                 <div

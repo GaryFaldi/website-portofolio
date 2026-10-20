@@ -1,8 +1,12 @@
-import { experience } from "../../data/experience";
+import { getExperience } from "../../data/experience";
+import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../shared/Reveal";
 import SectionHeading from "../shared/SectionHeading";
 
 export default function Experience() {
+  const { language, t } = useLanguage();
+  const experience = getExperience(language);
+
   return (
     <section
       id="experience"
@@ -14,8 +18,8 @@ export default function Experience() {
         <Reveal>
           <SectionHeading
             index="02"
-            eyebrow="Experience"
-            title="What I've Done"
+            eyebrow={t("experience.eyebrow")}
+            title={t("experience.title")}
           />
         </Reveal>
 
@@ -23,9 +27,7 @@ export default function Experience() {
         <div className="-mt-6 md:-mt-10">
           {experience.map((item, i) => (
             <Reveal key={item.role + item.period} delay={i * 100}>
-              <article
-                className="group relative pt-7 md:pt-8 pb-16 md:pb-20 first:pt-0 last:pb-0 mt-4"
-              >
+              <article className="group relative pt-7 md:pt-8 pb-16 md:pb-20 first:pt-0 last:pb-0 mt-4">
                 {/* Top Divider */}
                 {i !== 0 && (
                   <div
@@ -83,8 +85,7 @@ export default function Experience() {
                           <span
                             className="mt-[0.65em] h-1 w-1 shrink-0 rounded-full"
                             style={{
-                              backgroundColor:
-                                "var(--color-border-strong)",
+                              backgroundColor: "var(--color-border-strong)",
                             }}
                           />
 

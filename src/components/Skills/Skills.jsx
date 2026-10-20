@@ -1,17 +1,21 @@
-import { skillGroups } from "../../data/skills";
+import { getSkillGroups } from "../../data/skills";
+import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../shared/Reveal";
 import SectionHeading from "../shared/SectionHeading";
 
 export default function Skills() {
+  const { language, t } = useLanguage();
+  const skillGroups = getSkillGroups(language);
+
   return (
     <section id="skills" className="py-20 md:py-28">
       <div className="container-page">
         <Reveal>
           <SectionHeading
             index="06"
-            eyebrow="Skills"
-            title="Tools I work with"
-            description="Grouped by areas I actually use in projects — not a long list to look impressive."
+            eyebrow={t("skills.eyebrow")}
+            title={t("skills.title")}
+            description={t("skills.description")}
           />
         </Reveal>
 
@@ -20,9 +24,15 @@ export default function Skills() {
             <Reveal key={group.category} delay={i * 60}>
               <div
                 className="h-full rounded-2xl p-6 border"
-                style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
+                style={{
+                  backgroundColor: "var(--color-surface)",
+                  borderColor: "var(--color-border)",
+                }}
               >
-                <h3 className="text-sm font-semibold mb-4" style={{ color: "var(--color-text-primary)" }}>
+                <h3
+                  className="text-sm font-semibold mb-4"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
                   {group.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">

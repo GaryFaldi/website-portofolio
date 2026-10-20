@@ -4,12 +4,14 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { GithubIcon } from "../shared/BrandIcons";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function ProjectCard({
   project,
   featured = false,
   index = 0,
 }) {
+  const { t } = useLanguage();
   const links = project.links || {};
 
   const hasProject = Boolean(links.project);
@@ -63,7 +65,7 @@ export default function ProjectCard({
               color: "var(--color-badge-text)",
             }}
           >
-            Featured
+            {t("projects.featuredBadge", "Featured")}
           </span>
         </div>
 
@@ -99,7 +101,7 @@ export default function ProjectCard({
                   className="font-mono text-[10px] uppercase tracking-[0.16em] mb-3"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  Approach
+                  {t("projects.approachLabel", "Approach")}
                 </p>
 
                 <ul className="space-y-2">
@@ -141,7 +143,7 @@ export default function ProjectCard({
                   className="font-mono text-[10px] uppercase tracking-[0.16em]"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  Result
+                  {t("projects.resultLabel", "Result")}
                 </p>
 
                 <p
@@ -165,7 +167,7 @@ export default function ProjectCard({
                   className="font-mono text-[10px] uppercase tracking-[0.16em]"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  Role
+                  {t("projects.roleLabel", "Role")}
                 </p>
 
                 <p
@@ -221,7 +223,7 @@ export default function ProjectCard({
                     }}
                   >
                     <ExternalLink size={14} />
-                    View Project
+                    {t("projects.viewProject", "View Project")}
                   </a>
                 )}
 
@@ -239,7 +241,7 @@ export default function ProjectCard({
                     }}
                   >
                     <GithubIcon size={14} />
-                    GitHub
+                    {t("projects.github", "GitHub")}
                   </a>
                 )}
 
@@ -257,7 +259,7 @@ export default function ProjectCard({
                     }}
                   >
                     <FileText size={14} />
-                    Report
+                    {t("projects.report", "Report")}
                   </a>
                 )}
               </div>
@@ -355,7 +357,7 @@ export default function ProjectCard({
               color: "var(--color-text-muted)",
             }}
           >
-            Result
+            {t("projects.resultLabel", "Result")}
           </p>
 
           <p
@@ -410,7 +412,7 @@ export default function ProjectCard({
                 }}
               >
                 <ExternalLink size={13} />
-                View Project
+                {t("projects.viewProject", "View Project")}
               </a>
             )}
 
@@ -428,7 +430,7 @@ export default function ProjectCard({
                 }}
               >
                 <GithubIcon size={13} />
-                GitHub
+                {t("projects.github", "GitHub")}
               </a>
             )}
 
@@ -446,7 +448,7 @@ export default function ProjectCard({
                 }}
               >
                 <FileText size={13} />
-                Report
+                {t("projects.report", "Report")}
               </a>
             )}
           </div>

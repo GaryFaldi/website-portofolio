@@ -1,4 +1,5 @@
-import { bootcamps, education } from "../../data/education";
+import { getBootcamps, getEducation } from "../../data/education";
+import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../shared/Reveal";
 import SectionHeading from "../shared/SectionHeading";
 
@@ -93,6 +94,10 @@ function TrainingItem({ item }) {
 }
 
 export default function EducationTraining() {
+  const { language, t } = useLanguage();
+  const education = getEducation(language);
+  const bootcamps = getBootcamps(language);
+
   return (
     <section
       id="educationTraining"
@@ -104,8 +109,8 @@ export default function EducationTraining() {
         <Reveal>
           <SectionHeading
             index="03"
-            eyebrow="Education"
-            title="Education & Training"
+            eyebrow={t("education.eyebrow")}
+            title={t("education.title")}
           />
         </Reveal>
 
@@ -124,14 +129,14 @@ export default function EducationTraining() {
                     className="font-mono text-[10px] uppercase tracking-[0.18em]"
                     style={{ color: "var(--color-text-muted)" }}
                   >
-                    Academic Background
+                    {t("education.formalEyebrow")}
                   </p>
 
                   <h3
                     className="mt-1.5 text-2xl font-semibold tracking-tight"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Formal Education
+                    {t("education.formalTitle")}
                   </h3>
                 </div>
 
@@ -172,14 +177,14 @@ export default function EducationTraining() {
                     className="font-mono text-[10px] uppercase tracking-[0.18em]"
                     style={{ color: "var(--color-text-muted)" }}
                   >
-                    Professional Development
+                    {t("education.trainingEyebrow")}
                   </p>
 
                   <h3
                     className="mt-1.5 text-2xl font-semibold tracking-tight"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Bootcamp & Training
+                    {t("education.trainingTitle")}
                   </h3>
                 </div>
 

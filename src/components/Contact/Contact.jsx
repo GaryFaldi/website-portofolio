@@ -3,39 +3,42 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
-import { profile } from "../../data/profile";
+import { getProfile } from "../../data/profile";
+import { useLanguage } from "../../context/LanguageContext";
 import { GithubIcon, LinkedinIcon } from "../shared/BrandIcons";
 import Reveal from "../shared/Reveal";
 
-
-const links = [
-  {
-    label: "Email",
-    value: profile.email,
-    href: `mailto:${profile.email}`,
-    icon: Mail,
-  },
-  {
-    label: "WhatsApp",
-    value: "+62 813-5670-5440",
-    href: "https://wa.me/6281356705440",
-    icon: MessageCircle,
-  },
-  {
-    label: "LinkedIn",
-    value: "kadek-gary-faldi",
-    href: "https://linkedin.com/in/kadek-gary-faldi-861721305",
-    icon: LinkedinIcon,
-  },
-  {
-    label: "GitHub",
-    value: "GaryFaldi",
-    href: "https://github.com/GaryFaldi",
-    icon: GithubIcon,
-  },
-];
-
 export default function Contact() {
+  const { language, t } = useLanguage();
+  const profile = getProfile(language);
+
+  const links = [
+    {
+      label: "Email",
+      value: profile.email,
+      href: `mailto:${profile.email}`,
+      icon: Mail,
+    },
+    {
+      label: "WhatsApp",
+      value: "+62 813-5670-5440",
+      href: "https://wa.me/6281356705440",
+      icon: MessageCircle,
+    },
+    {
+      label: "LinkedIn",
+      value: "kadek-gary-faldi",
+      href: "https://linkedin.com/in/kadek-gary-faldi-861721305",
+      icon: LinkedinIcon,
+    },
+    {
+      label: "GitHub",
+      value: "GaryFaldi",
+      href: "https://github.com/GaryFaldi",
+      icon: GithubIcon,
+    },
+  ];
+
   return (
     <section
       id="contact"
@@ -45,17 +48,15 @@ export default function Contact() {
       }}
     >
       <div className="container-page w-full">
-
         <Reveal>
           <div className="max-w-2xl mb-8 md:mb-10">
-
             <p
               className="font-mono text-[10px] md:text-xs uppercase tracking-[0.18em] mb-2"
               style={{
                 color: "var(--color-primary)",
               }}
             >
-              07 · Contact
+              {t("contact.eyebrow", "07 · Contact")}
             </p>
 
             <h2
@@ -64,7 +65,7 @@ export default function Contact() {
                 color: "var(--color-text-primary)",
               }}
             >
-              Let's talk
+              {t("contact.title", "Let's talk")}
             </h2>
 
             <p
@@ -73,16 +74,12 @@ export default function Contact() {
                 color: "var(--color-text-secondary)",
               }}
             >
-              Open to internship opportunities, entry-level roles, or project
-              collaborations in the fields of Data Science, Machine Learning,
-              or Software Development.
+              {t("contact.description")}
             </p>
-
           </div>
         </Reveal>
 
         <div className="grid lg:grid-cols-[minmax(0,3fr)_minmax(220px,1fr)] gap-10 items-center">
-
           {/* Contact Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
             {links.map(({ label, value, href, icon: Icon }, i) => (
@@ -115,7 +112,6 @@ export default function Contact() {
                   }}
                 >
                   <div className="flex items-center gap-3 min-w-0">
-
                     <span
                       className="
                 flex
@@ -155,7 +151,6 @@ export default function Contact() {
                         {value}
                       </p>
                     </div>
-
                   </div>
 
                   <ArrowUpRight
@@ -176,20 +171,18 @@ export default function Contact() {
             ))}
           </div>
 
-
           {/* Mini Quote */}
           <div className="hidden lg:flex items-center justify-center">
             <div className="max-w-[220px]">
-
               <p
                 className="text-lg md:text-xl font-medium leading-relaxed"
                 style={{
                   color: "var(--color-text-primary)",
                 }}
               >
-                Always learning.
+                {t("contact.quote1", "Always learning.")}
                 <br />
-                Always building.
+                {t("contact.quote2", "Always building.")}
               </p>
 
               <div
@@ -198,12 +191,9 @@ export default function Contact() {
                   backgroundColor: "var(--color-primary)",
                 }}
               />
-
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

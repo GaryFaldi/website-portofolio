@@ -1,10 +1,14 @@
 import { ArrowUpRight, ChevronDown } from "lucide-react";
-import { profile } from "../../data/profile";
+import { getProfile } from "../../data/profile";
+import { useLanguage } from "../../context/LanguageContext";
 import { GithubIcon, LinkedinIcon } from "../shared/BrandIcons";
 import ContourPattern from "./ContourPattern";
 import { useState, useRef, useEffect } from "react";
 
 export default function Hero() {
+  const { language, t } = useLanguage();
+  const profile = getProfile(language);
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -21,7 +25,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative overflow-hidden min-h-screen flex flex-col justify-center pt-16">
+    <section
+      id="top"
+      className="relative overflow-hidden min-h-screen flex flex-col justify-center pt-16"
+    >
       <ContourPattern className="pointer-events-none absolute -right-24 top-0 w-[420px] md:w-[560px] h-auto" />
 
       <div className="container-page relative">
@@ -29,14 +36,15 @@ export default function Hero() {
           className="font-mono text-xs uppercase tracking-[0.2em] mb-5"
           style={{ color: "var(--color-primary)" }}
         >
-          Ungraduate Informatics Student from UPN "Veteran" Yogyakarta
+          {t("hero.eyebrow")}
         </p>
 
         <h1
           className="max-w-3xl text-4xl md:text-6xl font-semibold leading-[1.08]"
           style={{ color: "var(--color-text-primary)" }}
         >
-          Hi, I'm {profile.name}, and you can call me {profile.shortName}.
+          {t("hero.greetingPrefix")} {profile.name}
+          {t("hero.greetingMiddle")} {profile.shortName}.
         </h1>
 
         <p
@@ -55,7 +63,7 @@ export default function Hero() {
               color: "var(--color-button-primary-text)",
             }}
           >
-            View Projects
+            {t("hero.viewProjects")}
             <ArrowUpRight size={16} />
           </a>
 
@@ -68,8 +76,13 @@ export default function Hero() {
                 borderColor: "var(--color-button-secondary-border)",
               }}
             >
-              Download CV
-              <ChevronDown size={16} className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+              {t("hero.downloadCv")}
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-200 ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
 
             {isDropdownOpen && (
@@ -88,7 +101,7 @@ export default function Hero() {
                     className="flex items-center px-4 py-3 text-sm transition-colors hover:bg-[var(--color-surface-secondary)]"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Bahasa Indonesia
+                    {t("hero.cvId", "Bahasa Indonesia")}
                   </a>
                   <a
                     href={profile.resumeUrls.en}
@@ -97,10 +110,10 @@ export default function Hero() {
                     className="flex items-center px-4 py-3 text-sm transition-colors border-t hover:bg-[var(--color-surface-secondary)]"
                     style={{
                       color: "var(--color-text-primary)",
-                      borderColor: "var(--color-border)"
+                      borderColor: "var(--color-border)",
                     }}
                   >
-                    English
+                    {t("hero.cvEn", "English")}
                   </a>
                 </div>
               </div>

@@ -1,8 +1,12 @@
-import { profile } from "../../data/profile";
+import { getProfile } from "../../data/profile";
+import { useLanguage } from "../../context/LanguageContext";
 import Reveal from "../shared/Reveal";
 import SectionHeading from "../shared/SectionHeading";
 
 export default function About() {
+  const { language, t } = useLanguage();
+  const profile = getProfile(language);
+
   return (
     <section
       id="about"
@@ -14,8 +18,8 @@ export default function About() {
         <Reveal>
           <SectionHeading
             index="01"
-            eyebrow="About"
-            title="Background"
+            eyebrow={t("about.eyebrow")}
+            title={t("about.title")}
           />
         </Reveal>
 
@@ -27,9 +31,9 @@ export default function About() {
                 className="text-3xl md:text-4xl lg:text-[2.6rem] leading-[1.1] font-semibold tracking-tight"
                 style={{ color: "var(--color-text-primary)" }}
               >
-                Informatics Student &{" "}
+                {t("about.headingPrefix")}{" "}
                 <span style={{ color: "var(--color-accent)" }}>
-                  Aspiring Data Professional
+                  {t("about.headingHighlight")}
                 </span>
               </h3>
 
@@ -54,14 +58,14 @@ export default function About() {
                   className="font-mono text-[10px] uppercase tracking-[0.18em]"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  Based in
+                  {t("about.basedIn")}
                 </span>
 
                 <span
                   className="text-sm font-medium"
                   style={{ color: "var(--color-text-primary)" }}
                 >
-                  Yogyakarta, Indonesia
+                  {profile.location}
                 </span>
               </div>
             </div>
@@ -85,7 +89,7 @@ export default function About() {
                   className="font-mono text-xs uppercase tracking-[0.18em]"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  Education
+                  {t("about.educationCardTitle")}
                 </span>
 
                 <span
@@ -102,21 +106,21 @@ export default function About() {
                   className="font-mono text-[10px] uppercase tracking-wider"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  University
+                  {t("about.universityLabel")}
                 </p>
 
                 <h4
                   className="mt-1.5 text-lg md:text-xl font-semibold tracking-tight"
                   style={{ color: "var(--color-text-primary)" }}
                 >
-                  UPN "Veteran" Yogyakarta
+                  {t("about.universityName")}
                 </h4>
 
                 <p
                   className="mt-1 text-sm"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
-                  Bachelor of Informatics
+                  {t("about.degreeName")}
                 </p>
 
                 {/* Divider */}
@@ -131,7 +135,7 @@ export default function About() {
                   <a
                     href="/kadek_gary_faldi_transkrip-nilai.pdf"
                     download="kadek_gary_faldi_transkrip-nilai.pdf"
-                    title="Download academic transcript"
+                    title={t("about.gpaHint")}
                     className="group rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2"
                     style={{
                       backgroundColor: "var(--color-surface-secondary)",
@@ -142,7 +146,7 @@ export default function About() {
                       className="font-mono text-[10px] uppercase tracking-wider"
                       style={{ color: "var(--color-text-muted)" }}
                     >
-                      Current GPA / IPK
+                      {t("about.gpaLabel")}
                     </p>
 
                     <div className="mt-1.5 flex items-end justify-between gap-2">
@@ -175,7 +179,7 @@ export default function About() {
                       className="mt-1.5 text-[10px] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                       style={{ color: "var(--color-text-muted)" }}
                     >
-                      Click to download transcript
+                      {t("about.gpaHint")}
                     </p>
                   </a>
 
@@ -184,7 +188,7 @@ export default function About() {
                     href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/2_7qmAMZILdLeBSotjZApukpWuUgolkygG4QsOHNMT4BMsGtfoPIHBJwcl7pigTZRoUMog=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="View student record on PDDIKTI"
+                    title={t("about.statusHint")}
                     className="group rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2"
                     style={{
                       backgroundColor: "var(--color-surface-secondary)",
@@ -195,7 +199,7 @@ export default function About() {
                       className="font-mono text-[10px] uppercase tracking-wider"
                       style={{ color: "var(--color-text-muted)" }}
                     >
-                      Status
+                      {t("about.statusLabel")}
                     </p>
 
                     <div className="mt-2 flex items-center justify-between gap-2">
@@ -203,7 +207,7 @@ export default function About() {
                         className="text-sm md:text-base font-semibold"
                         style={{ color: "var(--color-text-primary)" }}
                       >
-                        Undergraduate
+                        {t("about.statusValue")}
                       </p>
 
                       {/* External link icon */}
@@ -227,7 +231,7 @@ export default function About() {
                       className="mt-0.5 text-xs"
                       style={{ color: "var(--color-text-muted)" }}
                     >
-                      2023 — Present
+                      {t("about.statusPeriod")}
                     </p>
 
                     {/* Hover hint */}
@@ -235,7 +239,7 @@ export default function About() {
                       className="mt-1.5 text-[10px] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                       style={{ color: "var(--color-text-muted)" }}
                     >
-                      Click to view PDDIKTI record
+                      {t("about.statusHint")}
                     </p>
                   </a>
                 </div>
