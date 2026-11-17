@@ -185,7 +185,7 @@ export default function About() {
 
                   {/* Undergraduate / PDDIKTI */}
                   <a
-                    href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/2_7qmAMZILdLeBSotjZApukpWuUgolkygG4QsOHNMT4BMsGtfoPIHBJwcl7pigTZRoUMog=="
+                    href="https://pddikti.kemdiktisaintek.go.id/detail-mahasiswa/YouBWCJ8fvaPQ9vfkOmRa9NF24gj4rMRfDJZo5DhZFIfE37aq7h744GfHsCNhAb9_zs0WQ=="
                     target="_blank"
                     rel="noopener noreferrer"
                     title={t("about.statusHint")}
